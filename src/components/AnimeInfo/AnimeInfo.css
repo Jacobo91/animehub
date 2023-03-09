@@ -1,0 +1,44 @@
+.anime-information{
+    padding: 0 1rem;
+}
+
+.anime-title{
+    padding: 1rem 0;
+}
+
+.anime-info-wrapper{
+    display: flex;
+}
+
+.anime-info-img-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    height: 360px;
+    flex-shrink: 0;
+    align-self: top;
+}
+
+.anime-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.anime-info-text{
+    padding: 0 0.5rem;
+    align-self: top;
+}
+
+.synopsis-title{
+    padding: 0.5rem 0;
+}
+
+.anime-info-description{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--darkblue);
+    padding: 0.5rem 0;
+}
+

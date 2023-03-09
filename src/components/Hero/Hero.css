@@ -1,0 +1,18 @@
+.hero{
+    background-image: url('../../images/hero.jpg');
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero--text{
+    font-size: 4rem;
+    color: white;
+}
+
+.hero--highlight{
+    color: var(--darkblue);
+}

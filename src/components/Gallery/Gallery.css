@@ -1,0 +1,26 @@
+
+.gallery-wrapper{
+    padding: 1rem;
+}
+
+.gallery{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    place-items: center;
+    align-items: start;
+    gap: 1rem;
+}
+
+.card{
+    text-align: center;
+    font-size: 12px;
+}
+
+.card--img{
+    max-height: 316px;
+}
+
+.card--text{
+    max-width: 225px;
+}

@@ -1,0 +1,26 @@
+.sidebar{
+    width: 240px;
+    height: 100vh;
+    box-shadow: 0 5px 5px black;
+    background-color: #eeeded;
+}
+
+.links-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+    border-bottom: 1px solid black;
+}
+
+.links-container > *{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding-left: 1rem;
+}
+
+.links-container > *:hover{
+
+    color: var(--darkorange);
+}
