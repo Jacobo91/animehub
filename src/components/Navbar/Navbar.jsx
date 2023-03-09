@@ -18,6 +18,7 @@ export default function Navbar(){
                 <li>
                     <NavLink
                         to='/'
+                        className={({isActive})=> isActive ? 'active': 'inActive'}
                     >
                         Home
                     </NavLink>
@@ -25,6 +26,7 @@ export default function Navbar(){
                 <li>
                     <NavLink
                         to='/genres'
+                        className={({isActive})=> isActive ? 'active': 'inActive'}
                     >
                         Genres
                     </NavLink>

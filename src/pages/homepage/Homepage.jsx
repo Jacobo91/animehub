@@ -6,7 +6,10 @@ export default function Homepage(props){
     return(
         <main>
             <Hero/>
-            <Gallery data={props.data} />
+            <Gallery />
         </main>
     )
 }
+
+
+/*data={props.data}*/

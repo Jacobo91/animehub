@@ -1,8 +1,7 @@
-.sidebar{
-    width: 240px;
+
+.Genres-main{
+    display: flex;
     height: 100vh;
-    box-shadow: 0 5px 5px black;
-    background-color: #eeeded;
 }
 
 .links-container{
@@ -10,8 +9,17 @@
     flex-direction: column;
     justify-content: space-around;
     height: 30%;
-    border-bottom: 1px solid black;
 }
+
+.sidebar{
+    width: 240px;
+    height: 30%;
+    box-shadow: 0 5px 5px black;
+    background-color: #eeeded;
+    height: 100vh;
+}
+
+
 
 .links-container > *{
     display: block;
@@ -21,6 +29,14 @@
 }
 
 .links-container > *:hover{
-
     color: var(--darkorange);
+}
+
+.display{
+    width: calc(100% - 240px);
+    overflow-y: scroll;
+}
+
+.active-link{
+    background-color: var(--lightorange);
 }
