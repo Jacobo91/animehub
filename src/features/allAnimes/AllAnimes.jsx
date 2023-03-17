@@ -10,7 +10,7 @@ export default function AllAnimes(){
 
     useEffect(() => {
         dispatch(loadData())
-    }, [])
+    },[])
 
     return(
         <section className="all-animes" >
