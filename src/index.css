@@ -1,3 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,132 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*==== global styles ====*/
+
+:root{
+  --blue: #145364;
+  --oragne-dark: #FD6F3B;
+  --orange-light: #FD9B3C;
+  --yellow: #FDCA3B;
+}
+
+section{
+  padding:  1rem;
+}
+
+h2{
+  padding: 0 0 1rem 1rem;
+}
+
+/*===== App ======*/
+
+.App{
+  background-color: #f2f2f2;
+}
+
+/*===== navbar ======*/
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-image: url('./images/navbar-img.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.logo{
+  color: white;
+}
+
+.highlight{
+  color: var(--oragne-dark);
+  font-weight: bold;
+}
+
+nav ul{
+  display: flex;
+}
+
+nav ul li{
+  list-style: none;
+  margin-inline: 10px;
+}
+
+nav i{
+  color: white;
+}
+
+.active > *{
+  color: var(--blue);
+}
+
+nav button{
+  background-color: transparent;
+  border: none;
+  color: transparent;
+}
+
+/*==== searchbar ====*/
+
+.searchbar{
+  display: flex;
+  justify-content: center;
+}
+
+.searchinput{
+  width: 60%;
+  height: 2rem;
+  text-indent: 5px;
+  border: none;
+  outline: none;
+}
+
+.celarSearchInput-btn{
+  border: none;
+  background-color: white;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+/*==== gallery ====*/
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  place-items: center;
+  row-gap: 1%;
+}
+
+.card{
+  width: 225px;
+  height: 380px;
+  text-align: center;
+  position: relative;
+}
+
+.card--img{
+  height: 100%;
+  width: 100%;
+}
+
+.card--title{
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding:8px;
+  background-color: rgba(67, 66, 66, 0.7);
+}
+
+/*==== footer ====*/
+
+footer{
+  height: 10rem;
+  background-color: var(--blue);
+  position: relative;
+  bottom: 0;
 }
