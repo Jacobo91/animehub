@@ -1,7 +1,7 @@
 import { getData } from '../../getData';
 import { selectSearchTerm } from '../searchbar/searchTermSlice';
 
-let animeData;
+export let animeData;
 
 getData()
     .then(data => {
@@ -40,3 +40,4 @@ export const selectFilteredAllAnimes = state => {
             anime.title.toLowerCase().includes(searchTerm.toLowerCase())
         )
 }
+

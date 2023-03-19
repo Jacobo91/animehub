@@ -7,7 +7,7 @@ export const getData = async () => {
         }
     };
     
-    const baseURL = 'https://anime-db.p.rapidapi.com/anime?page=1&size=40&sortOrder=asc';
+    const baseURL = 'https://anime-db.p.rapidapi.com/anime?page=1&size=10&sortOrder=asc';
 
     try{
         const response = await fetch(baseURL, options)

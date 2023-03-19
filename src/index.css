@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f2f2f2;
 }
 
 code {
@@ -121,6 +122,19 @@ nav button{
   height: 380px;
   text-align: center;
   position: relative;
+}
+
+.bookmark-btn{
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  color: var(--blue);
+  background-color: rgba(248, 243, 243, 0.9);
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
 }
 
 .card--img{
