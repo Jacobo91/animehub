@@ -1,31 +1,28 @@
-import { animeData } from "../allAnimes/allAnimesSlice";
+import { createSlice } from "@reduxjs/toolkit";
+import { selectAllAnimes } from "../allAnimes/allAnimesSlice";
 import { selectSearchTerm } from "../searchbar/searchTermSlice";
 
+// create slice
 
-const initialState = [];
-
-export const loadSeries = () => {
-    return {
-        type: 'series/loadData',
-        payload: animeData
+export const seriesSlice = createSlice(
+    {
+        name: "series",
+        initialState: [],
+        reducers: {
+            loadSeries: (state, action) => {
+                return selectAllAnimes
+            }
+        }
     }
-} 
-
-export const seriesReducer = (series = initialState, action) => {
-    switch(action.type){
-        case 'series/loadData':
-            return action.payload;
-        default:
-            return series
-    }
-}
+)
 
 
 export const selectSeries = state => state.series;
+export const seriesReducer = seriesSlice.reducer;
 
 
 export const selectFilteredBySeries = state => {
-    const allAnimes = selectSeries(state)
+    const allAnimes = selectAllAnimes(state)
     const term = 'TV'
 
     return allAnimes.filter(anime => 

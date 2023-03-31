@@ -1,24 +1,37 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loadData } from "./allAnimesSlice";
-import { selectFilteredAllAnimes } from "./allAnimesSlice";
-import Gallery from "../../components/Gallery/Gallery";
+import { fetchData, selectFilteredAllAnimes } from "./allAnimesSlice";
+import CardItem  from '../../components/CardItem/CardItem';
+import AddFavoriteButton from "../../components/buttons/AddFavoriteButton";
+import { selectIsFavorite } from "../isFavorite/isFavoriteSlice";
+
 
 export default function AllAnimes(){
 
-    const allAnimes = useSelector(selectFilteredAllAnimes);   /* array */
+    const allAnimes = useSelector(selectFilteredAllAnimes);
+    const isFavorite = useSelector(selectIsFavorite);   /* array */
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadData())
-    })
+        dispatch(fetchData())
+    }, [dispatch])
 
     return(
         <section className="all-animes" >
             <h2>All Animes</h2>
-            <Gallery
-                array={allAnimes}
-            />
+            <section className="gallery" >
+                {
+                    allAnimes.map(anime => (
+                        <CardItem  anime={anime} key={anime._id}>
+                            <AddFavoriteButton
+                                anime={anime}
+                            >
+                                    <i className={`fa-regular fa-bookmark`}></i>
+                            </AddFavoriteButton>
+                        </CardItem>
+                    ))
+                }
+            </section>
         </section>
     )
 }

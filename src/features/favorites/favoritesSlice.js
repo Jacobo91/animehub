@@ -1,34 +1,30 @@
 import { selectSearchTerm } from "../searchbar/searchTermSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
 
-
-export const favoritesReducer = (favorites = initialState, action) => {
-    switch(action.type){
-        case 'favorties/addFavorite':
-            return [...favorites, action.payload];
-        case 'favorites/removeFavorite':
-            return favorites.filter(anime =>
-                    anime._id !== action.payload._id
-                );
-        default:
-            return favorites
-    }   
-}
-
-export const addFavorite = (anime) => {
-    return{
-        type: 'favorties/addFavorite',
-        payload: anime
+const favoritesSlice = createSlice(
+    {
+        name: "favorites",
+        initialState: [],
+        reducers: {
+            addFavorite: (state, action) => {
+                const existingIndex = state.findIndex(anime => anime._id === action.payload._id);
+                if (existingIndex === -1) {
+                    state.push(action.payload);
+                }
+            },
+            removeFavorite: (state, action) => {
+                return state.filter(anime => 
+                        anime._id !== action.payload._id
+                    )
+            }
+        }
     }
-}
+);
 
-export const removeFavorite = (anime) => {
-    return{
-        type: 'favorites/removeFavorite',
-        payload: anime
-    }
-}
+
+export const { addFavorite, removeFavorite } = favoritesSlice.actions;
+export const favoritesReducer = favoritesSlice.reducer;
 
 export const selectFavorites = state => state.favorites;
 

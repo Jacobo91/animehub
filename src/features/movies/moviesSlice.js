@@ -1,28 +1,24 @@
-import { animeData } from "../allAnimes/allAnimesSlice";
+import { selectAllAnimes } from "../allAnimes/allAnimesSlice";
 import { selectSearchTerm } from "../searchbar/searchTermSlice";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+// ceate slice
 
-export const loadMovies = () => {
-    return {
-        type: 'movies/loadData',
-        payload: animeData
+export const moviesSlice = createSlice(
+    {
+        name: 'movies',
+        initialState: [],
+        reducers: {}
     }
-}
+)
 
-export const moviesReducer = (movies = initialState, action) => {
-    switch(action.type){
-        case 'movies/loadData':
-            return action.payload;
-        default:
-            return movies
-    }
-}
 
 export const selectMovies = state => state.movies;
+export const moviesReducer = moviesSlice.reducer; 
+
 
 export const selectFilteredAllAnimesByMovie = state => {
-    const allAnimes = selectMovies(state)
+    const allAnimes = selectAllAnimes(state)
     const term = 'Movie'
 
     return allAnimes.filter(anime =>

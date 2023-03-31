@@ -1,13 +1,14 @@
-import Gallery from "../../components/Gallery/Gallery";
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFavorites } from "./favoritesSlice";
 import { removeFavorite } from "./favoritesSlice";
 import { filteredFavorites } from "./favoritesSlice";
+import  CardItem  from '../../components/CardItem/CardItem';
+import RemoveFavoriteButton from '../../components/buttons/RemoveFavoriteButton';
+
 
 export default function Favorites(){
 
     const favorites = useSelector(filteredFavorites);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     function handleRemove(anime){
         dispatch(removeFavorite(anime))
@@ -16,25 +17,17 @@ export default function Favorites(){
     return(
         <section className="series" >
             <h2>Favorites</h2>
-            <article className="gallery" >
+            <section className="gallery" >
                 {
                     favorites.map(anime => (
-                        <div className="card" key={anime._id} >
-                            <button
-                                className="bookmark-btn"
-                                onClick={() => handleRemove(anime)}
-                            >
-                                <i className="fa-solid fa-x"></i>
-                            </button>
-                            <img src={anime.image} alt={anime.name} className="card--img" />
-                            <div className="card--title"  >
-                                <p>{anime.title}</p>
-                                <p>{anime.type}</p>
-                            </div>
-                        </div>
+                        <CardItem  anime={anime}>
+                            <RemoveFavoriteButton anime={anime}>
+                                <i className={`fa-solid fa-x`}></i>
+                            </RemoveFavoriteButton>
+                        </CardItem>
                     ))
                 }
-            </article>
+            </section>
         </section>
     )
 }

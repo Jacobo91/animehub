@@ -1,7 +1,7 @@
 import { selectSearchTerm } from './searchTermSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm } from './searchTermSlice';
-import { clearSearchterm } from './searchTermSlice';
+import { clearSearchTerm } from './searchTermSlice';
 
 export default function SearchBar(){
 
@@ -14,7 +14,7 @@ export default function SearchBar(){
     }
 
     function handleClearSearchTerm(){
-        dispatch(clearSearchterm())
+        dispatch(clearSearchTerm())
     }
 
     return(
@@ -31,7 +31,7 @@ export default function SearchBar(){
                 className="celarSearchInput-btn"
                 onClick={handleClearSearchTerm}
             >
-                <i class="fa-solid fa-x"></i>
+                <i className="fa-solid fa-x"></i>
             </button>
             )}
         </section>

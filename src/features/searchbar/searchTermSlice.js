@@ -1,27 +1,23 @@
-const initalState = '';
+import { createSlice } from "@reduxjs/toolkit"
 
-export const setSearchTerm = (term) => {
-    return {
-        type: 'searchTerm/setSearchTerm',
-        payload: term
+
+const searchTermSlice = createSlice(
+    {
+        name:"searchTerm",
+        initialState: "",
+        reducers: {
+            setSearchTerm: (state, action) => {
+                return action.payload
+            },
+            clearSearchTerm: (state, action) => {
+                return "";
+            }
+        }
     }
-}
+);
 
-export const clearSearchterm = () => {
-    return {
-        type: 'searchTerm/clearSearchTerm'
-    }
-}
 
-export const searchTermReducer = (searchTerm = initalState, action) => {
-    switch(action.type){
-        case 'searchTerm/setSearchTerm':
-            return action.payload;
-        case 'searchTerm/clearSearchTerm':
-            return '';
-        default:
-            return searchTerm;
-    }
-}
+export const searchTermReducer = searchTermSlice.reducer;
+export const { setSearchTerm, clearSearchTerm } = searchTermSlice.actions;
+export const selectSearchTerm = state => state.searchTerm;
 
-export const selectSearchTerm = state => state.searchTerm
