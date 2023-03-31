@@ -10,7 +10,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
         async () => {
             try{
                 const response = await fetch(
-                    'https://anime-db.p.rapidapi.com/anime?page=1&size=10&sortOrder=asc',
+                    'https://anime-db.p.rapidapi.com/anime?page=1&size=250&sortOrder=asc',
                     {
                         method: 'GET',
                         headers: {

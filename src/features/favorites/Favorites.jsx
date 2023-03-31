@@ -1,5 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { removeFavorite } from "./favoritesSlice";
+import { useSelector } from 'react-redux';
 import { filteredFavorites } from "./favoritesSlice";
 import  CardItem  from '../../components/CardItem/CardItem';
 import RemoveFavoriteButton from '../../components/buttons/RemoveFavoriteButton';
@@ -8,11 +7,6 @@ import RemoveFavoriteButton from '../../components/buttons/RemoveFavoriteButton'
 export default function Favorites(){
 
     const favorites = useSelector(filteredFavorites);
-    const dispatch = useDispatch();
-
-    function handleRemove(anime){
-        dispatch(removeFavorite(anime))
-    }
 
     return(
         <section className="series" >
