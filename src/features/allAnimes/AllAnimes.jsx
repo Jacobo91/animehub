@@ -3,13 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchData, selectFilteredAllAnimes } from "./allAnimesSlice";
 import CardItem  from '../../components/CardItem/CardItem';
 import AddFavoriteButton from "../../components/buttons/AddFavoriteButton";
-import { selectIsFavorite } from "../isFavorite/isFavoriteSlice";
+
 
 
 export default function AllAnimes(){
 
     const allAnimes = useSelector(selectFilteredAllAnimes);
-    const isFavorite = useSelector(selectIsFavorite);   /* array */
     const dispatch = useDispatch();
 
     useEffect(() => {

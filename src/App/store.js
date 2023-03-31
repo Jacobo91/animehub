@@ -4,7 +4,7 @@ import { seriesReducer } from '../features/series/seriesSlice';
 import { moviesReducer } from '../features/movies/moviesSlice';
 import { favoritesReducer } from '../features/favorites/favoritesSlice';
 import { configureStore } from '@reduxjs/toolkit';
-import { isFavoriteReducer } from '../features/isFavorite/isFavoriteSlice';
+
 
 export const store = configureStore({
     reducer: {
@@ -13,7 +13,6 @@ export const store = configureStore({
         movies: moviesReducer,
         favorites: favoritesReducer,
         searchTerm: searchTermReducer,
-        isFavorite: isFavoriteReducer
     }
 });
 
